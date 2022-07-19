@@ -1,6 +1,5 @@
 package com.smartpay.process;
 
-import com.google.gson.Gson;
 import com.smartpay.dao.UserDao;
 import com.smartpay.model.ResponseData;
 import com.smartpay.utils.ConnectRedis;
