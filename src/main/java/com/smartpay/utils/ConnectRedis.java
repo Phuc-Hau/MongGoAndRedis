@@ -60,7 +60,7 @@ public class ConnectRedis {
             client.srem(user.getUsername());
         } catch (Exception e){}
         client.sadd(user.getUsername(),"user:"+id);
-//        client.expire("user:"+idStt,STT);
+//        client.expire("user:"+id,STT);
     }
 
     public static void deleteJedis(User user){
@@ -78,9 +78,9 @@ public class ConnectRedis {
 
     public static String getId(User user){
         Jedis client =getJedis();
-        String username = String.valueOf(client.smembers(user.getUsername()));
-        username = username.substring(1).replace("]","");
-        return username;
+        String id = String.valueOf(client.smembers(user.getUsername()));
+        id = id.substring(1).replace("]","");
+        return id;
     }
 
 }
